@@ -1,0 +1,5 @@
+# Git ignore list
+
+## visual studio temporary files
+
+.vscode/
