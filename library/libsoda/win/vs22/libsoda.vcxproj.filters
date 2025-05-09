@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="foundation">
+      <UniqueIdentifier>{7f3e3519-5ba8-43f8-916b-4a514c6d0252}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\libsoda\foundation\type.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\object.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\thread_pool.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\thread.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\timer.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\exception.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\dump.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\string.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\string_util.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\system_util.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\time.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\time_formatter.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\looper.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\condition.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\foundation\thread_pool.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\thread.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\exception.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\object.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\dump_win.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\dump.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\string.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\string_util.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\system_util.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\time.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\time_formatter.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\condition.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\foundation\looper.cpp">
+      <Filter>foundation</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
