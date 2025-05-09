@@ -308,17 +308,19 @@ void Thread::join()
 }
 
 #if defined(_WIN64)
-	void Thread::yield() { ::SwitchToThread(); }
-	void Thread::sleep(uint32_t msec) { ::Sleep(msec); }
+void Thread::yield() { ::SwitchToThread(); }
+
+void Thread::sleep(uint32_t msec) { ::Sleep(msec); }
 #else
-	void Thread::yield() { ::sched_yield(); }
-	void Thread::sleep(uint32_t msec)
-	{
-		struct timespec ts_sleep, ts_remaining;
-		ts_sleep.tv_sec = msec / 1000;
-		ts_sleep.tv_nsec = (msec % 1000) * 1000000;
-		::nanosleep(&ts_sleep, &ts_remaining);
-	}
+void Thread::yield() { ::sched_yield(); }
+
+void Thread::sleep(uint32_t msec)
+{
+	struct timespec ts_sleep, ts_remaining;
+	ts_sleep.tv_sec = msec / 1000;
+	ts_sleep.tv_nsec = (msec % 1000) * 1000000;
+	::nanosleep(&ts_sleep, &ts_remaining);
+}
 #endif
 
 
