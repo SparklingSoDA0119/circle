@@ -8,17 +8,35 @@
     <Filter Include="system">
       <UniqueIdentifier>{b9403505-6f5b-46f8-8a1e-9b06448e2c9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="system\network">
+      <UniqueIdentifier>{63470a66-0074-4d9e-b72c-69028ea97254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="setup">
+      <UniqueIdentifier>{da38acec-69ff-4036-a9db-76a5768caf63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\application\server\server.cpp" />
     <ClCompile Include="..\..\..\application\server\system\system.cpp">
       <Filter>system</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\application\server\system\network\network_manager.cpp">
+      <Filter>system\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\application\server\setup\setup.cpp">
+      <Filter>setup</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\application\server\define.h" />
     <ClInclude Include="..\..\..\application\server\system\system.h">
       <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\system\network\network_manager.h">
+      <Filter>system\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\setup\setup.h">
+      <Filter>setup</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

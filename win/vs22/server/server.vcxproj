@@ -84,10 +84,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\application\server\server.cpp" />
+    <ClCompile Include="..\..\..\application\server\setup\setup.cpp" />
+    <ClCompile Include="..\..\..\application\server\system\network\network_manager.cpp" />
     <ClCompile Include="..\..\..\application\server\system\system.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\application\server\define.h" />
+    <ClInclude Include="..\..\..\application\server\setup\setup.h" />
+    <ClInclude Include="..\..\..\application\server\system\network\network_manager.h" />
     <ClInclude Include="..\..\..\application\server\system\system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

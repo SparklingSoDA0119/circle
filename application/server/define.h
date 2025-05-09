@@ -1,6 +1,8 @@
 #ifndef _CIRCLE_SERVER_DEFINE_H_
 #define _CIRCLE_SERVER_DEFINE_H_
 
+#include <libsoda/foundation/string.h>
+
 #include <iostream>
 #include <string>
 #include <memory>
@@ -14,8 +16,10 @@
 
 _namespace_server_begin
 
-#define _M_server_version		"0.0.1"
-#define _M_server_build_number	"0001"
+using soda::String;
+
+#define _M_server_version		L"0.0.1"
+#define _M_server_build_number	L"0001"
 
 _namespace_server_end
 
