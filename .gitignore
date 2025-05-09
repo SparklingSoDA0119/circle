@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# release
+library/libsoda/win/vs22/release
+win/vs22/.vs
+library/libsoda/win/vs22/x64
+win/release/x64/server
+win/vs22/server/.vs
+win/vs22/server/x64/server
