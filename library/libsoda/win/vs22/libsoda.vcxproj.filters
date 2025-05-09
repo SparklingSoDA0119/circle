@@ -52,6 +52,9 @@
     <ClInclude Include="..\..\include\libsoda\foundation\condition.h">
       <Filter>foundation</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\foundation\singlton.h">
+      <Filter>foundation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\foundation\thread_pool.cpp">

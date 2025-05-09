@@ -89,6 +89,7 @@
     <ClInclude Include="..\..\include\libsoda\foundation\exception.h" />
     <ClInclude Include="..\..\include\libsoda\foundation\looper.h" />
     <ClInclude Include="..\..\include\libsoda\foundation\object.h" />
+    <ClInclude Include="..\..\include\libsoda\foundation\singlton.h" />
     <ClInclude Include="..\..\include\libsoda\foundation\string.h" />
     <ClInclude Include="..\..\include\libsoda\foundation\string_util.h" />
     <ClInclude Include="..\..\include\libsoda\foundation\system_util.h" />
