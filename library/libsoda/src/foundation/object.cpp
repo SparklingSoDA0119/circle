@@ -48,7 +48,7 @@ namespace {
 	void _win_performWithoutException(Object* pObj, void(Object::*func)())
 	{ 
 		__try {
-
+			(pObj->*func)();
 		}
 		__except (SODA_DUMP(GetExceptionInformation(), L"Thread"), EXCEPTION_CONTINUE_SEARCH)
 		{
