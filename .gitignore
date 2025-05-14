@@ -39,6 +39,7 @@ win/vs22/server/.vs
 library/rapidjson/rapidjson-1.1.0
 library/cpprestsdk/cpprest-2.10.19_win
 library/libsoda/win/vs22/x64
+library/poco/poco_1.12.4_win
 
 # release
 library/libsoda/win/vs22/release
@@ -46,4 +47,3 @@ win/release/x64/server
 win/vs22/server/x64/server
 win/vs22/server/x64
 release
-
