@@ -14,6 +14,9 @@
     <Filter Include="setup">
       <UniqueIdentifier>{da38acec-69ff-4036-a9db-76a5768caf63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="system\network\rest">
+      <UniqueIdentifier>{547c6ae8-7ed6-43dd-ab20-ec1b108be249}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\application\server\server.cpp" />
@@ -26,6 +29,12 @@
     <ClCompile Include="..\..\..\application\server\setup\setup.cpp">
       <Filter>setup</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\application\server\system\network\rest\rest_server_param.cpp">
+      <Filter>system\network\rest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\application\server\system\network\rest\rest_server.cpp">
+      <Filter>system\network\rest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\application\server\define.h" />
@@ -37,6 +46,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\application\server\setup\setup.h">
       <Filter>setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\system\network\rest\rest_server.h">
+      <Filter>system\network\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\system\network\rest\rest_server_param.h">
+      <Filter>system\network\rest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

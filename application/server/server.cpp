@@ -14,7 +14,7 @@ cc::srv::System* _pSrvSystem = nullptr;
 
 int32_t main(int32_t argc, char* arvg[])
 {
-	printf("<%s(%d)> ** Project 'Circle Server' start now..\n", __FUNCTION__, __LINE__);
+	printf("Info: Project 'Circle Server' start now..\n");
 
 	_pSrvSystem = soda::Singleton<cc::srv::System>::get();
 	if (!_pSrvSystem) {
@@ -23,13 +23,13 @@ int32_t main(int32_t argc, char* arvg[])
 	}
 
 	if (_pSrvSystem->initialize() != 0) {
-		printf("<%s(%d)> ** Error: Can not initialize Server System.\n", __FUNCTION__, __LINE__);
+		printf("Error: Can not initialize Server System.\n");
 		return 1;
 	}
 
 	_pSrvSystem->join();
 
-	printf("<%s(%d)> ** Project 'Circle Server' finish..\n", __FUNCTION__, __LINE__);
+	printf("Info: Project 'Circle Server' finish..\n");
 
 	return 0;
 }

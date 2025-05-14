@@ -44,12 +44,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)..\release\$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(ProjectDir)\$(Platform)\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)$(Platform)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)..\release\$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(ProjectDir)\$(Platform)\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\  </OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -57,13 +58,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\application\server\;$(ProjectDir)..\..\..\library\libsoda\include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\application\server\;$(ProjectDir)..\..\..\library\libsoda\include\;$(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\library\libsoda\win\vs22\release\x64\libsoda\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\library\libsoda\win\vs22\release\x64\libsoda\;$(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\debug\lib\</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy.exe /Y $(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\debug\bin\cpprest_2_10d.dll $(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -73,7 +77,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\..\application\server\;$(ProjectDir)\..\..\..\library\libsoda\include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\application\server\;$(ProjectDir)..\..\..\library\libsoda\include\;$(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -86,12 +90,16 @@
     <ClCompile Include="..\..\..\application\server\server.cpp" />
     <ClCompile Include="..\..\..\application\server\setup\setup.cpp" />
     <ClCompile Include="..\..\..\application\server\system\network\network_manager.cpp" />
+    <ClCompile Include="..\..\..\application\server\system\network\rest\rest_server.cpp" />
+    <ClCompile Include="..\..\..\application\server\system\network\rest\rest_server_param.cpp" />
     <ClCompile Include="..\..\..\application\server\system\system.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\application\server\define.h" />
     <ClInclude Include="..\..\..\application\server\setup\setup.h" />
     <ClInclude Include="..\..\..\application\server\system\network\network_manager.h" />
+    <ClInclude Include="..\..\..\application\server\system\network\rest\rest_server.h" />
+    <ClInclude Include="..\..\..\application\server\system\network\rest\rest_server_param.h" />
     <ClInclude Include="..\..\..\application\server\system\system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

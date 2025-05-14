@@ -8,6 +8,10 @@
 #include <memory>
 #include <vector>
 
+#if defined(_WIN64)
+	#pragma warning(disable: 4996)
+#endif
+
 #define _namespace_circle_begin	namespace cc {
 #define _namespace_circle_end	}
 
