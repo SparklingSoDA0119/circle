@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\libsoda\data\types\user.h" />
     <ClInclude Include="..\..\include\libsoda\document\json\json.h" />
     <ClInclude Include="..\..\include\libsoda\foundation\condition.h" />
     <ClInclude Include="..\..\include\libsoda\foundation\dump.h" />
@@ -103,6 +104,7 @@
     <ClInclude Include="..\..\include\libsoda\foundation\type.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\data\types\user.cpp" />
     <ClCompile Include="..\..\src\document\json\json.cpp" />
     <ClCompile Include="..\..\src\foundation\condition.cpp" />
     <ClCompile Include="..\..\src\foundation\dump.cpp" />

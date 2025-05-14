@@ -51,12 +51,12 @@ class RangeException : public Exception
 {
 public :
 	struct info_s {
-		int32_t begin;
-		int32_t end;
-		int32_t pos;
+		size_t begin;
+		size_t end;
+		size_t pos;
 
 		info_s() : begin(0), end(0), pos(0) {}
-		info_s(const int32_t b, const int32_t e, const int32_t p) : begin(b), end(e), pos(p) {}
+		info_s(const size_t b, const size_t e, const size_t p) : begin(b), end(e), pos(p) {}
 	};
 
 public :

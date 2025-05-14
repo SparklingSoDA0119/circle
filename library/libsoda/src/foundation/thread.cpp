@@ -328,7 +328,7 @@ void Thread::checkTimers()
 {
 	std::lock_guard<std::mutex> al(_timerLock);
 
-	uint32_t tick = util::tick::currentTick();
+	uint64_t tick = util::tick::currentTick();
 	std::list<timer_s>::iterator i = _timers.begin();
 	while (i != _timers.end()) {
 		Timer* timer = (*i).pTimer.get();

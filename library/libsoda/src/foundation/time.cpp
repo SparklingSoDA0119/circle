@@ -193,8 +193,7 @@ int32_t Time::daysInMonth(const int32_t year, const int32_t month)
 void Time::setCurrentTime(const Time& t)
 {
 	assert(t.isValid());
-
-	assert(false, "setCurrentTime() not supported");
+	//assert(false, "setCurrentTime() not supported");
 #if defined(_WIN64)
 #else
 #endif

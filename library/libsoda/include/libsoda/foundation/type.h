@@ -11,6 +11,8 @@
 #define _namespace_soda_util_begin	_namespace_soda_begin namespace util {
 #define _namespace_soda_util_end    } _namespace_soda_end
 
+#define _namespace_soda_data_begin	_namespace_soda_begin namespace data {
+#define _namespace_soda_data_end    } _namespace_soda_end
 
 #if defined(_WIN64)
 	#include <ctime>
@@ -143,5 +145,7 @@ typedef std::shared_ptr<Binary> BinaryPtr;
 		#define PACK_END    __attribute__((packed))
 	#endif
 #endif
+
+#define _M_reset(Pointer)	if (Pointer) { Pointer.reset(); Pointer = nullptr; }
 
 #endif	// _LIBSODA_FOUNDATION_TYPE_H_

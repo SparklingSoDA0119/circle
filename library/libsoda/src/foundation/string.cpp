@@ -331,7 +331,7 @@ const size_t String::npos;
 const wchar_t& String::at(const size_t index) const
 {
 	if (_wstring.length() <= index) {
-		THROW_RANGE_EXCEPTION(L"String::at()", index);
+		THROW_RANGE_EXCEPTION(L"String::at()", static_cast<int32_t>(index));
 	}
 	return _wstring[index];
 }
@@ -340,7 +340,7 @@ const wchar_t& String::at(const size_t index) const
 int32_t String::compare(const size_t index, const size_t length, const String& s) const
 {
 	if (_wstring.length() <= index) {
-		THROW_RANGE_EXCEPTION(L"String::compare()", index);
+		THROW_RANGE_EXCEPTION(L"String::compare()", static_cast<int32_t>(index));
 	}
 	return _wstring.compare(index, length, s._wstring);
 }

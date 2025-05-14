@@ -14,6 +14,12 @@
     <Filter Include="document\json">
       <UniqueIdentifier>{8306aabe-14a9-4dd4-85d1-29e1f520e0d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{83180706-be76-4039-b492-61454bb9a31a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\types">
+      <UniqueIdentifier>{c85fe242-8370-43f2-8cbd-7b663ecc7ff8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\libsoda\foundation\type.h">
@@ -64,6 +70,9 @@
     <ClInclude Include="..\..\include\libsoda\document\json\json.h">
       <Filter>document\json</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\libsoda\data\types\user.h">
+      <Filter>data\types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\foundation\thread_pool.cpp">
@@ -107,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\document\json\json.cpp">
       <Filter>document\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\data\types\user.cpp">
+      <Filter>data\types</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

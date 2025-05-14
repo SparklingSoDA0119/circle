@@ -64,7 +64,7 @@ public:
 protected :
 	struct timer_s {
 		std::shared_ptr<Timer> pTimer;
-		uint32_t lastCheckTick;
+		uint64_t lastCheckTick;
 		timer_s() : lastCheckTick(0) {}
 	};
 

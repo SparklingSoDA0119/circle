@@ -88,6 +88,8 @@ private :
 	std::shared_ptr<JsonDocW> _pDoc;
 };	// class Json
 
+typedef std::shared_ptr<Json> JsonPtr;
+
 _namespace_soda_end
 
 #endif	// _LIBSODA_DOCUMENT_JSON_JSON_H_
