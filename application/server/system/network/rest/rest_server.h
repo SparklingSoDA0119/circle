@@ -2,6 +2,7 @@
 #define _CIRCLE_SERVER_SYSTEM_NETWORK_REST_REST_SERVER_H_
 
 #include "system/network/rest/rest_server_param.h"
+#include "system/db/db_session_manager.h"
 
 #include <cpprest/http_listener.h>
 
@@ -26,6 +27,9 @@ private :
 
 private :
 	web::http::experimental::listener::http_listener _listener;
+
+private :
+	DbSessionManager* _pDbSessManager;
 
 };	// class RestServer
 

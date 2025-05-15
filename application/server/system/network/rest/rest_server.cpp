@@ -1,5 +1,7 @@
 #include "system/network/rest/rest_server.h"
 
+#include <libsoda/foundation/singlton.h>
+
 #if defined(_WIN64)
 	#if defined(_DEBUG)
 		#pragma comment(lib, "cpprest_2_10d.lib")
@@ -13,6 +15,8 @@ _namespace_server_begin
 RestServer::RestServer()
 	: _isOpen(false)
 	, _param()
+	, _listener()
+	, _pDbSessManager(nullptr)
 {
 
 }
@@ -37,6 +41,12 @@ int32_t RestServer::initialize(const RestServerParam& param)
 	if (ret != 0) {
 		printf("Error: Can not open RestServer.\n");
 		return ret;
+	}
+
+	_pDbSessManager = soda::Singleton<DbSessionManager>::get();
+	if (!_pDbSessManager) {
+		printf("Error: Can not get DbSessionManager.\n");
+		return 1;
 	}
 
 	return 0;

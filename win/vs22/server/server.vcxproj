@@ -58,15 +58,19 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\application\server\;$(ProjectDir)..\..\..\library\libsoda\include\;$(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\application\server\;$(ProjectDir)..\..\..\library\libsoda\include\;$(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\include\;$(ProjectDir)..\..\..\library\poco\poco_1.12.4_win\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\library\libsoda\win\vs22\release\x64\libsoda\;$(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\debug\lib\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\library\libsoda\win\vs22\release\x64\libsoda\;$(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\debug\lib\;$(ProjectDir)..\..\..\library\poco\poco_1.12.4_win\lib\</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy.exe /Y $(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\debug\bin\cpprest_2_10d.dll $(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\</Command>
+      <Command>xcopy.exe /Y $(ProjectDir)..\..\..\library\cpprestsdk\cpprest-2.10.19_win\debug\bin\cpprest_2_10d.dll $(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\
+xcopy.exe /Y $(ProjectDir)..\..\..\library\poco\poco_1.12.4_win\bin\PocoFoundation64d.dll $(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\
+xcopy.exe /Y $(ProjectDir)..\..\..\library\poco\poco_1.12.4_win\bin\PocoData64d.dll $(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\
+xcopy.exe /Y $(ProjectDir)..\..\..\library\poco\poco_1.12.4_win\bin\PocoDataMySQL64d.dll $(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\
+xcopy.exe /Y $(ProjectDir)..\..\..\library\poco\poco_1.12.4_win\bin\libmariadb.dll $(ProjectDir)..\..\..\release\$(Platform)\$(Configuration)\$(ProjectName)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -89,6 +93,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\application\server\server.cpp" />
     <ClCompile Include="..\..\..\application\server\setup\setup.cpp" />
+    <ClCompile Include="..\..\..\application\server\system\db\db_session_manager.cpp" />
+    <ClCompile Include="..\..\..\application\server\system\db\db_session_param.cpp" />
     <ClCompile Include="..\..\..\application\server\system\network\network_manager.cpp" />
     <ClCompile Include="..\..\..\application\server\system\network\rest\rest_server.cpp" />
     <ClCompile Include="..\..\..\application\server\system\network\rest\rest_server_param.cpp" />
@@ -97,6 +103,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\application\server\define.h" />
     <ClInclude Include="..\..\..\application\server\setup\setup.h" />
+    <ClInclude Include="..\..\..\application\server\system\db\db_session_manager.h" />
+    <ClInclude Include="..\..\..\application\server\system\db\db_session_param.h" />
     <ClInclude Include="..\..\..\application\server\system\network\network_manager.h" />
     <ClInclude Include="..\..\..\application\server\system\network\rest\rest_server.h" />
     <ClInclude Include="..\..\..\application\server\system\network\rest\rest_server_param.h" />
