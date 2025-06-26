@@ -20,6 +20,9 @@
     <Filter Include="system\db">
       <UniqueIdentifier>{833170ff-56fe-4805-95f1-016bd895983f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="system\network\rest\server">
+      <UniqueIdentifier>{aefe261f-27c8-4347-8944-8da92725ed2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\application\server\server.cpp" />
@@ -44,6 +47,12 @@
     <ClCompile Include="..\..\..\application\server\system\db\db_session_param.cpp">
       <Filter>system\db</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\application\server\system\network\rest\server\urls.cpp">
+      <Filter>system\network\rest\server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\application\server\system\network\rest\rest_request.cpp">
+      <Filter>system\network\rest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\application\server\define.h" />
@@ -67,6 +76,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\application\server\system\db\db_session_param.h">
       <Filter>system\db</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\system\network\rest\server\urls.h">
+      <Filter>system\network\rest\server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\system\network\rest\rest_request.h">
+      <Filter>system\network\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\system\network\rest\rest_define.h">
+      <Filter>system\network\rest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

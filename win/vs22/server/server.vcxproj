@@ -96,8 +96,10 @@ xcopy.exe /Y $(ProjectDir)..\..\..\library\poco\poco_1.12.4_win\bin\libmariadb.d
     <ClCompile Include="..\..\..\application\server\system\db\db_session_manager.cpp" />
     <ClCompile Include="..\..\..\application\server\system\db\db_session_param.cpp" />
     <ClCompile Include="..\..\..\application\server\system\network\network_manager.cpp" />
+    <ClCompile Include="..\..\..\application\server\system\network\rest\rest_request.cpp" />
     <ClCompile Include="..\..\..\application\server\system\network\rest\rest_server.cpp" />
     <ClCompile Include="..\..\..\application\server\system\network\rest\rest_server_param.cpp" />
+    <ClCompile Include="..\..\..\application\server\system\network\rest\server\urls.cpp" />
     <ClCompile Include="..\..\..\application\server\system\system.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -106,8 +108,11 @@ xcopy.exe /Y $(ProjectDir)..\..\..\library\poco\poco_1.12.4_win\bin\libmariadb.d
     <ClInclude Include="..\..\..\application\server\system\db\db_session_manager.h" />
     <ClInclude Include="..\..\..\application\server\system\db\db_session_param.h" />
     <ClInclude Include="..\..\..\application\server\system\network\network_manager.h" />
+    <ClInclude Include="..\..\..\application\server\system\network\rest\rest_define.h" />
+    <ClInclude Include="..\..\..\application\server\system\network\rest\rest_request.h" />
     <ClInclude Include="..\..\..\application\server\system\network\rest\rest_server.h" />
     <ClInclude Include="..\..\..\application\server\system\network\rest\rest_server_param.h" />
+    <ClInclude Include="..\..\..\application\server\system\network\rest\server\urls.h" />
     <ClInclude Include="..\..\..\application\server\system\system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
