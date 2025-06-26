@@ -3,6 +3,7 @@
 
 #include "system/network/rest/rest_server_param.h"
 #include "system/db/db_session_manager.h"
+#include "system/network/rest/server/urls.h"
 
 #include <cpprest/http_listener.h>
 
@@ -30,6 +31,7 @@ private :
 
 private :
 	DbSessionManager* _pDbSessManager;
+	UrlSupport _urls;
 
 };	// class RestServer
 

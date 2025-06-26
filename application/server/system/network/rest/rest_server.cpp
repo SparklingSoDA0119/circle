@@ -1,4 +1,5 @@
 #include "system/network/rest/rest_server.h"
+#include "system/network/rest/rest_request.h"
 
 #include <libsoda/foundation/singlton.h>
 
@@ -17,6 +18,7 @@ RestServer::RestServer()
 	, _param()
 	, _listener()
 	, _pDbSessManager(nullptr)
+	, _urls()
 {
 
 }
@@ -87,6 +89,8 @@ int32_t RestServer::open()
 
 void RestServer::handleAll(const web::http::http_request& req)
 {
+	RestRequest request(req);
+
 	
 }
 
