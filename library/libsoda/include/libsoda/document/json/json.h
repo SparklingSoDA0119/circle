@@ -53,6 +53,7 @@ public :
 	bool get(const String& name, float_t* pValue);
 	bool get(const String& name, double_t* pValue);
 	bool get(const String& name, String* pValue);
+	bool get(const String& name, Json* pValue);
 
 	void set(const String& name, const bool value);
 	void set(const String& name, const int32_t value);
@@ -62,6 +63,7 @@ public :
 	void set(const String& name, const float_t value);
 	void set(const String& name, const double_t value);
 	void set(const String& name, const String& value);
+	void set(const String& name, Json* pJson);
 
 	bool push(const String& name, const bool value);
 	bool push(const String& name, const int32_t value);
@@ -71,6 +73,7 @@ public :
 	bool push(const String& name, const float_t value);
 	bool push(const String& name, const double_t value);
 	bool push(const String& name, const String& value);
+	bool push(const String& name, Json* pJson);
 
 public :
 	bool makeArray(const String& name);

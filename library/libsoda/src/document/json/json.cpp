@@ -15,6 +15,7 @@ Json::Json()
 	: _pDoc(nullptr)
 {
 	_pDoc = std::make_shared<JsonDocW>();
+	_pDoc->SetObject();
 }
 
 
@@ -216,15 +217,15 @@ void Json::set(const String& name, const String& value)
 bool Json::push(const String& name, const String& value)
 {
 	if (isExist(name)) {
-			auto itr = _pDoc->FindMember(name.to_wstring());
-			if (itr->value.IsArray()) {
-				itr->value.PushBack(makeValue(value), _pDoc->GetAllocator());
-				return true;
-			}
-			else {
-				return false;
-			}
+		auto itr = _pDoc->FindMember(name.to_wstring());
+		if (itr->value.IsArray()) {
+			itr->value.PushBack(makeValue(value), _pDoc->GetAllocator());
+			return true;
 		}
+		else {
+			return false;
+		}
+	}
 	else {
 		JsonValueW arr(rapidjson::kArrayType);
 		arr.PushBack(makeValue(value), _pDoc->GetAllocator());
@@ -255,6 +256,69 @@ bool Json::get(const String& name, std::shared_ptr<Json> pValue)
 	}
 }
 #endif
+
+
+bool Json::get(const String& name, Json* pValue)
+{
+	if (!pValue) {
+		return false;
+	}
+
+	_M_is_exist;
+
+	auto itr = _pDoc->FindMember(name.to_wstring());
+	if (itr->value.IsObject()) {
+		pValue->_pDoc->CopyFrom(itr->value, pValue->_pDoc->GetAllocator());
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+
+void Json::set(const String& name, Json* pJson)
+{
+	if (!pJson) {
+		return;
+	}
+
+	JsonValueW value;
+	value.CopyFrom(*(pJson->_pDoc), _pDoc->GetAllocator());
+
+	if (isExist(name)) {
+		auto itr = _pDoc->FindMember(name.to_wstring());
+		if (itr->value.IsObject()) {
+			itr->value = value;
+		}
+	}
+	else {
+		_pDoc->AddMember(makeValue(name), value, _pDoc->GetAllocator());
+	}
+}
+
+
+bool Json::push(const String& name, Json* pJson)
+{
+	if (!pJson) {
+		return false;
+	}
+
+	JsonValueW value;
+	value.CopyFrom(*(pJson->_pDoc), _pDoc->GetAllocator());
+	if (!isExist(name)) {
+		makeArray(name);
+	}
+
+	auto itr = _pDoc->FindMember(name.to_wstring());
+	if (itr->value.IsArray()) {
+		itr->value.PushBack(value, _pDoc->GetAllocator());
+		return true;
+	}
+
+	return true;
+}
+
 
 bool Json::makeArray(const String& name)
 {
