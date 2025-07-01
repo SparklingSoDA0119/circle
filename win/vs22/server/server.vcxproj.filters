@@ -23,6 +23,12 @@
     <Filter Include="system\network\rest\server">
       <UniqueIdentifier>{aefe261f-27c8-4347-8944-8da92725ed2c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="system\db\types">
+      <UniqueIdentifier>{8a137cc5-afd5-4fbc-8f1d-5d18ba2b2421}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\db\types\club">
+      <UniqueIdentifier>{e790f9f8-725e-492d-9ea8-556dd09285a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\application\server\server.cpp" />
@@ -52,6 +58,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\application\server\system\network\rest\rest_request.cpp">
       <Filter>system\network\rest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\application\server\system\network\rest\server\server_response.cpp">
+      <Filter>system\network\rest\server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\application\server\system\db\types\club\joined_member.cpp">
+      <Filter>system\db\types\club</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\application\server\system\network\rest\rest_define.h">
       <Filter>system\network\rest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\system\network\rest\server\server_response.h">
+      <Filter>system\network\rest\server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\application\server\system\db\types\club\joined_member.h">
+      <Filter>system\db\types\club</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

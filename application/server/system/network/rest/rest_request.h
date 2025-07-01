@@ -36,6 +36,9 @@ public :
 	const String findQuery(const String& name) const;
 
 public :
+	void replyJson(const int32_t code, const String* body);
+
+public :
 	bool operator==(const RestRequest& req) const;
 	bool operator!=(const RestRequest& req) const;
 

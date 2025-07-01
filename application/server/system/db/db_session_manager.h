@@ -34,6 +34,9 @@ private:
 public :
 	const String getDbVersion();
 
+public:
+	const String searchClubInformation(const String& clubGuid);
+
 public :
 	template <typename Type>
 	int32_t select(const String& queryStr, Type* pData, DbSess* pSess = nullptr)

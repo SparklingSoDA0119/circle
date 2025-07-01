@@ -1,4 +1,5 @@
 #include "system/db/db_session_manager.h"
+#include "system/db/types/club/joined_member.h"
 
 #include <Poco/Data/MySQL/Connector.h>
 #include <libsoda/foundation/singlton.h>
@@ -160,6 +161,42 @@ const String DbSessionManager::getDbVersion()
 	select(query, &dbVer);
 
 	return dbVer;
+}
+
+
+const String DbSessionManager::searchClubInformation(const String& clubGuid)
+{
+	String dbName = L"club" + clubGuid + L".mst_joined_member";
+	dbName.remove('-');
+
+	String query = L"SELECT * FROM " + dbName;
+
+#if 0
+	typedef Poco::Tuple<int32_t, int32_t, std::string, int32_t, int32_t> JoinedMember;
+	std::vector<JoinedMember> joinedMemberList;
+
+	int32_t ret = select(query, &joinedMemberList);
+
+	if (ret == 0) {
+
+	}
+
+	return L"";
+#endif
+	
+	JoinedMemberList::Tbl row;
+
+	int32_t ret = select(query, &row);
+	if (ret != 0) {
+
+	}
+
+	JoinedMemberList joinedMemList;
+	joinedMemList.from(row);
+
+	String t = joinedMemList.toJsonStr();
+
+	return t;
 }
 
 _namespace_server_end

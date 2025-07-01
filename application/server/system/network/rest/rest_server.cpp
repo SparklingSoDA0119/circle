@@ -1,5 +1,4 @@
 #include "system/network/rest/rest_server.h"
-#include "system/network/rest/rest_request.h"
 
 #include <libsoda/foundation/singlton.h>
 
@@ -91,7 +90,31 @@ void RestServer::handleAll(const web::http::http_request& req)
 {
 	RestRequest request(req);
 
-	
+	String uri = request.path();
+
+	if (uri.find(L"circle/test/club") != String::npos) {
+		Response resp = handleClub(&request);
+		request.replyJson(web::http::status_codes::OK, &resp.msg());
+		return;
+	}
+}
+
+
+Response RestServer::handleClub(const RestRequest* pReq)
+{
+	String uri = pReq->path();
+	String mode = pReq->findHeader(L"mode");
+	String clubGuid = pReq->findHeader(L"guid");
+
+	if (mode.isEmpty() || clubGuid.isEmpty()) {
+		return Response(404, L"mode or guid is empty.");
+	}
+	else if (mode == L"information") {
+		String result = _pDbSessManager->searchClubInformation(clubGuid);
+		return Response(200, result);
+	}
+
+	return Response();
 }
 
 _namespace_server_end

@@ -4,6 +4,8 @@
 #include "system/network/rest/rest_server_param.h"
 #include "system/db/db_session_manager.h"
 #include "system/network/rest/server/urls.h"
+#include "system/network/rest/server/server_response.h"
+#include "system/network/rest/rest_request.h"
 
 #include <cpprest/http_listener.h>
 
@@ -21,6 +23,9 @@ public :
 private :
 	int32_t open();
 	void handleAll(const web::http::http_request& req);
+
+private :
+	Response handleClub(const RestRequest* pReq);
 
 private :
 	bool _isOpen;

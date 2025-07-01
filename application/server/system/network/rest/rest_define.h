@@ -14,6 +14,12 @@ enum class Method
 	Delete,
 };
 
+#if defined(_WIN64)
+	#define REST_STRING(x) x.to_wstring()
+#else
+	#define REST_STRING(x) x.to_string()
+#endif
+
 _namespace_server_end
 
 #endif	// _CIRCLE_SERVER_SYSTEM_NETWORK_REST_REST_DEFINE_H_

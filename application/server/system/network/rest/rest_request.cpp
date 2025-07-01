@@ -49,6 +49,8 @@ RestRequest::RestRequest(const web::http::http_request& req)
 	}
 
 	parseQuery();
+
+	_request = req;
 }
 
 
@@ -114,6 +116,16 @@ const String RestRequest::findQuery(const String& name) const
 	}
 
 	return L"";
+}
+
+
+void RestRequest::replyJson(const int32_t code, const String* pBody)
+{
+	if (!pBody) {
+		_request.reply(web::http::status_codes::InternalError);
+	}
+
+	_request.reply(code, REST_STRING((*pBody)), U("application/json;"));
 }
 
 
