@@ -1,7 +1,7 @@
 #include "system/db/types/club/joined_member.h"
 
-
-
+#include <Poco/DateTimeFormatter.h>
+#include <Poco/DateTimeFormat.h>
 
 _namespace_server_begin
 
@@ -11,6 +11,7 @@ JoinedMember::JoinedMember()
 	, _name()
 	, _eGrade(Grade::Max)
 	, _eGender(Gender::Max)
+	, _eLv(Level::Normal)
 {
 
 }
@@ -33,9 +34,14 @@ void JoinedMember::from(const TblRow& row)
 {
 	_memUid = row.get<0>();
 	_userUid = row.get<1>();
-	_name.fromUtf8(row.get<2>());
-	setGrade(row.get<3>());
-	setGender(row.get<4>());
+	setGrade(row.get<2>());
+	setLevel(row.get<3>());
+	_name.fromUtf8(row.get<4>());
+	_phoneNum.from_string(row.get<5>());
+	setGender(row.get<6>());
+
+	String date(Poco::DateTimeFormatter().format(row.get<7>(), Poco::DateTimeFormat::SORTABLE_FORMAT));
+	_birthDay = date.substring(0, 10);
 }
 
 
@@ -48,6 +54,9 @@ std::shared_ptr<soda::Json> JoinedMember::toJson() const
 	pDoc->set(L"name", _name);
 	pDoc->set(L"grade", gradeNum());
 	pDoc->set(L"gender", genderNum());
+	pDoc->set(L"birthDay", _birthDay);
+	pDoc->set(L"level", levelNum());
+	pDoc->set(L"phoneNum", _phoneNum);
 
 	return pDoc;
 }
@@ -60,8 +69,6 @@ const String JoinedMember::toJsonStr() const
 
 
 
-
-
 JoinedMember& JoinedMember::operator=(const JoinedMember& mem)
 {
 	_memUid = mem._memUid;
@@ -69,6 +76,9 @@ JoinedMember& JoinedMember::operator=(const JoinedMember& mem)
 	_name = mem._name;
 	_eGrade = mem._eGrade;
 	_eGender = mem._eGender;
+	_eLv = mem._eLv;
+	_phoneNum = mem._phoneNum;
+	_birthDay = mem._birthDay;
 
 	return *this;
 }

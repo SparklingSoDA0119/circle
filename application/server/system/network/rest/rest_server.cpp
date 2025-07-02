@@ -111,7 +111,12 @@ Response RestServer::handleClub(const RestRequest* pReq)
 	}
 	else if (mode == L"information") {
 		String result = _pDbSessManager->searchClubInformation(clubGuid);
-		return Response(200, result);
+		if (result.isEmpty()) {
+			return Response(500, L"search error.");
+		}
+		else {
+			return Response(200, result);
+		}
 	}
 
 	return Response();

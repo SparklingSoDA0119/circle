@@ -169,7 +169,8 @@ const String DbSessionManager::searchClubInformation(const String& clubGuid)
 	String dbName = L"club" + clubGuid + L".mst_joined_member";
 	dbName.remove('-');
 
-	String query = L"SELECT * FROM " + dbName;
+	String query = L"SELECT member_uid, user_uid, grade, level, name, phone, gender, birthday FROM " + dbName;
+	query += L" LEFT JOIN circle_test.user ON circle_test.user.uid = " + dbName + L".user_uid";
 
 #if 0
 	typedef Poco::Tuple<int32_t, int32_t, std::string, int32_t, int32_t> JoinedMember;
@@ -188,7 +189,7 @@ const String DbSessionManager::searchClubInformation(const String& clubGuid)
 
 	int32_t ret = select(query, &row);
 	if (ret != 0) {
-
+		return L"";
 	}
 
 	JoinedMemberList joinedMemList;
